@@ -1,0 +1,20 @@
+<div *ngIf="restartInfo">Game restarted!!!</div>
+<div *ngFor="let i of row" class="app">
+  <div class="app__row">
+    <div *ngFor="let j of col"
+         class="app__col" [class._selected]="currentRow == i && currentCol==j">
+      <div>
+        {{ ((i*10)+j)+1}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="_rollDice()">click me!! to roll</button>
+
+DICE Value : {{diceValue}}
+
+<div *ngIf="showInfo">This move is not possible !!!</div>
+<div *ngIf="hasWon"> YOU WON!!!</div>
+
+Current Value : {{currentValue}}
